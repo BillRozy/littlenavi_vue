@@ -1,0 +1,272 @@
+html, body{
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+header{
+  height: 100px;
+  width:100%;
+  background: #f06292;
+}
+
+section{
+  width:100%;
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.littlenavi-display{
+  height: 100%;
+  width:100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.littlenavi-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width:100%;
+  min-height: 300px;
+  min-width: 300px;
+  max-height: 1000px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 200px;
+  font-size: 5em;
+  font-family: 'Verdana';
+  color: purple;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.go-button{
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width:250px;
+  height:180px;
+  background: #f06292;
+  font-size: 2em;
+  font-family: 'Verdana';
+  color: white;
+}
+
+.go-button:hover{
+  cursor: pointer;
+  border: 2px solid #ab47bc;
+  transition: 0.1s;
+}
+
+.map-view{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  height:100%;
+  font-size: 2em;
+  font-family: 'Verdana';
+  color: black;
+}
+
+.geocoding-tools{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height:100px;
+  max-width: 750px;
+  transition: 0.3s;
+  top:0;
+}
+
+.map-view input{
+  box-sizing: border-box;
+  padding: 5px;
+  width:250px;
+  height:50px;
+  border-radius: 10px;
+  border: 2px solid #790e8b;
+  font-size: 0.6em;
+  font-family: 'Verdana';
+  text-align: center;
+}
+
+.displayed{
+  display: flex;
+}
+
+#mapid {
+  width: 80%;
+  height: 400px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.hasError{
+  border-color: red !important;
+}
+
+.round-button{
+  background: url('../images/car-xxl.png') #790e8b no-repeat 50% 50%;
+  background-size: 30%;
+  width:160px;
+  height:60px;
+  border-radius: 20px;
+  transition:0.3s;
+}
+
+.round-button:hover{
+  cursor: pointer;
+  background: url('../images/car-xxl.png') #f06292 no-repeat 50% 50%;
+  background-size: 20%;
+}
+
+.round-button.onStart{
+  cursor: pointer;
+  background: url('../images/car-xxl.png') #790e8b no-repeat 20% 50%;
+  background-size: 20%;
+}
+
+.round-button.onFinish{
+  cursor: pointer;
+  background: url('../images/car-xxl.png') #790e8b no-repeat 80% 50%;
+  background-size: 20%;
+}
+
+/*.map-view input:focus ~ .dropping-list{
+  height: auto;
+}*/
+
+.dropping-list{
+  height: 0px;
+  width: 100%;
+  list-style-type:none;
+  position: absolute;
+  top: 55px;
+  left:0;
+  background: white;
+  z-index: 1000;
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+  overflow-y: auto;
+  max-height: 400px;
+  transition: 0.5s;
+}
+
+.dropping-list li{
+  box-sizing: border-box;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 0.5em;
+  border-bottom: 1px #ba2d65 solid;
+}
+
+.dropping-list li:hover{
+  cursor: pointer;
+  background: #ba2d65;
+  color: white;
+}
+
+#naviapp{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  min-width: 1000px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#recents-view-template{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px #790e8b solid;
+}
+
+#content{
+  flex-grow: 5;
+  flex-basis: 800px;
+  height:100%;
+}
+
+#menu{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height:100%;
+}
+
+.recents-view{
+  right:0;
+  border: 1px #790e8b solid;
+  max-height: 60%;
+  overflow-y: auto;
+  border-radius: 15px 0 0 15px;
+}
+
+.recent-view{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 250px;
+    min-height: 100px;
+    border-bottom: 1px #f06292 solid;
+    padding: 5px;
+}
+
+.recent-view:hover{
+  cursor: pointer;
+  background: #f06292;
+}
+
+.recent-date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100px;
+  height:100px;
+  color: lightgray;
+  font-size: 12px;
+  text-align: center;
+}
+
+.recent-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:50%;
+  width: 150px;
+  color: #790e8b;
+  text-align: center;
+}
+
+.recent-view:hover .recent-name{
+  color: white;
+}
+
+.recent-names{
+  height: 100px;
+  width: calc(100% - 100px);
+}
